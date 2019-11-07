@@ -1,7 +1,3 @@
-<?php
-      require 'dbconfig/config.php';
-      session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
       <head>
@@ -296,86 +292,7 @@
             </footer>
             
             <!-- End of Footer Section -->
-            
-            <!-- PHP Content -->
-
-            <?php
-                  if(isset($_POST['signup_btn']))
-                  {
-                        $fname = $_POST['fname'];
-                        $lname = $_POST['lname'];
-                        $gender = $_POST['gender'];
-                        $phone = $_POST['phone'];
-                        $date = $_POST['date'];
-                        $month = $_POST['month'];
-                        $year = $_POST['year'];
-                        $email = $_POST['email'];
-                        $password = $_POST['password'];
-                        $cpassword = $_POST['cpassword'];
-
-                        $new_date = (string)$date;
-                        $new_month = (string)$month;
-                        $new_year = (string)$year;
-                        
-                        $dateofbirth = $new_date.'/'.$new_month.'/'.$new_year;
-
-                        $len = strlen($phone);
-                  
-                        if($len!=10 || $phone<=0){
-                            echo '<script type="text/javascript">alert("Invalid Phone Number")</script>';
-                        }
-                        
-                        $query = "select * from credentials WHERE phone='$phone'";
-                        $query2 = "select * from user_info WHERE email='$email'";
-                        $query_run = mysqli_query($con,$query);
-                        $query_run2 = mysqli_query($con,$query2);
-
-                        if(mysqli_num_rows($query_run)>0)
-                        {
-                              echo '<script type="text/javascript">alert("The phone number already exists!")</script>';
-                        }
-                        elseif (mysqli_num_rows($query_run2)>0) {
-                              echo '<script type="text/javascript">alert("The email already exists!")</script>';
-                        }
-                        else{
-                              if($password==$cpassword)
-                              {
-                                    $query = "insert into user_info values('$fname','$lname','$gender','$phone','$dateofbirth','$email')";
-                                    $query1 = "insert into credentials values('$phone','$password')";
-                                    $query_run = mysqli_query($con,$query);
-                                    $query_run1 = mysqli_query($con,$query1);
-
-                                    if($query_run && $query_run1){
-                                          echo '<script type="text/javascript">alert("Account created successfully !")</script>';
-                                    }
-                              }
-                              else{
-                                    echo '<script type="text/javascript">alert("Password and Confirm Password does not match !")</script>';
-                              }
-                        }
-                  }
-                  if(isset($_POST['submit_btn']))
-                  {
-                        $phone = $_POST['phone'];
-                        $password = $_POST['password'];
-
-                        $query = "select * from credentials WHERE phone='$phone' AND password='$password'";
-                        $query_run = mysqli_query($con,$query);
-
-                        if(mysqli_num_rows($query_run)>0){
-                              #$row = mysqli_fetch_assoc($query_run3);
-                              #$firstname = $row['firstname'];
-                              #$full_name = $firstname.' '.$lastname;
-                              $_SESSION['full_name'] = $full_name;
-                              header('location:homepage.php');
-                        }
-                        else{
-                              echo '<script type="text/javascript">alert("Invalid credentials !")</script>';
-                        }
-                  }
-            ?>
-
-            <script src="js/jquery-3.3.1.slim.min.js"></script>
+                        <script src="js/jquery-3.3.1.slim.min.js"></script>
             <script src="js/popper.min.js"></script>
             <script src="js/bootstrap.min.js"></script>
       </body>
