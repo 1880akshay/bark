@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(image.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+#topHeader{
+    background-color: ghostwhite;
+    border-bottom: 1px solid silver;
+}
+#topHeader a{
+    color: #2c3e50;
+    font-size: 0.89rem;
+}
+#topHeader i{
+    color: #2c3e50;
+    font-size: 0.89rem;
+}
+#topHeader a:hover{
+    text-decoration: none;
+}
+#bottomHeader{
+    background: linear-gradient(125deg,#3c5268,#01080e);
+    color: #fff;
+}
+.main-title{
+    font-family: 'Righteous', cursive;
+}
+.heading h1{
+    color: #fff;
+    text-align: center;
+    font-family: 'Kaushan Script', cursive;
+}
+.main-content{
+    padding-top: 50px;
+}
+.login input{
+    background: none;
+    border: none;
+    color: #fff;
+    border-bottom: 1px solid skyblue;
+}
+.dob{
+    background: none;
+    border: none;
+    color: #fff;
+    border-bottom: 1px solid skyblue;
+}
+.profile_pic{
+    width: 50px;
+    display: flex;
+}
+.sign-in{
+    float: right;
+    font-size: 0.89rem;
+}
+.form label{
+    color: #fff;
+    font-weight: bold;
+}
+#emailHelp{
+    color: black;
+    font-weight: bold;
+}
+.form p{
+    color: #fff;
+    font-weight: bold;
+}
+.textbox{
+    border-bottom: 1px solid skyblue;
+}
+i{
+    color: #fff;
+}
+.textbox input{
+    border: none;
+    outline: none;
+    background: none;
+    color: #fff;
+    font-size: 18px;
+    width: 80%;
+    margin: 0 10px;
+}
+.about{
+    color: #fff;
+}
+.about h1{
+    border-bottom: 3px solid #2980b9;
+    width: 50%;
+    font-family: 'Raleway';
+    font-weight: 400;
+}
+.about p{
+    letter-spacing: 1px;
+}
+#login-box{
+    vertical-align: middle;
+}
+.footer_content{
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+}
